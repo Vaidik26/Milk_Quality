@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.env
+logs/
+artifacts/
+.ipynb_checkpoints/
+notebooks/
