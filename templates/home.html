@@ -4,43 +4,67 @@
   <meta charset="UTF-8">
   <title>Milk Quality Predictor</title>
   <style>
-    html, body {
-      height: 100%;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-image: url("{{ url_for('static', filename='milk_bg_clean.png') }}");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      font-family: "Segoe UI", sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #cceae7;
+      text-align: center;
+    }
+
+    .bg-image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .btn-container {
+      margin-top: -80px; /* Adjust based on image text */
     }
 
     .btn {
-      margin-top: 20px;
+      padding: 14px 30px;
       background-color: #f5b041;
       color: white;
-      padding: 15px 30px;
-      font-size: 1.2em;
+      font-weight: bold;
       border: none;
-      border-radius: 12px;
+      border-radius: 10px;
+      font-size: 1rem;
       cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #e59866;
+      background-color: #e69520;
+    }
+
+    @media (max-width: 768px) {
+      .btn-container {
+        margin-top: -50px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-  <a href="{{ url_for('predict') }}" class="btn">Get Started</a>
+
+  <!-- Full natural size image, responsive -->
+  <img src="/static/milk_bg_clean.png" alt="Milk Quality Background" class="bg-image">
+
+  <!-- Button just under the image -->
+  <div class="btn-container">
+    <a href="/predict"><button class="btn">Get Started</button></a>
+  </div>
+
 </body>
 </html>
