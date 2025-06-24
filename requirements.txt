@@ -5,4 +5,5 @@ matplotlib
 seaborn
 dill
 jupyter
+pymongo
 -e .
