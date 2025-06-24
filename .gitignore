@@ -2,7 +2,7 @@ venv/
 __pycache__/
 *.pyc
 logs/
-artifacts/
+artifacts/raw.csv
 .env
 .ipynb_checkpoints/
 Project_Template.py
