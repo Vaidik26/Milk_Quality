@@ -7,5 +7,6 @@ dill
 jupyter
 pymongo
 dotenv
-json
+werkzeug
+flask
 #-e .

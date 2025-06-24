@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Milk Quality Predictor</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url("{{ url_for('static', filename='milk_bg_clean.png') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #f5b041;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+      background-color: #e59866;
+    }
+  </style>
+</head>
+<body>
+  <a href="{{ url_for('predict') }}" class="btn">Get Started</a>
+</body>
+</html>
