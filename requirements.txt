@@ -6,4 +6,5 @@ seaborn
 dill
 jupyter
 pymongo
--e .
+dotenv
+#-e .

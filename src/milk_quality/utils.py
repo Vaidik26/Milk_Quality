@@ -5,10 +5,11 @@ import pandas as pd
 import pymongo
 from pymongo import MongoClient
 from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
-
+from dotenv import load_dotenv
 from src.milk_quality.logger import logging
 from src.milk_quality.exception import CustomException
 
+load_dotenv()
 
 def save_object(file_path: str, obj) -> None:
     """
@@ -93,15 +94,15 @@ def save_json(path: str, data: dict) -> None:
         raise CustomException(e)
 
 
-def get_collection_as_dataframe(
-    database_name: str,
-    collection_name: str,
-    mongo_uri: str = "mongodb://localhost:27017/",
-) -> pd.DataFrame:
+def get_collection_as_dataframe() -> pd.DataFrame:
     """
-    Load data from a MongoDB collection and return as a pandas DataFrame.
+    Load data from MongoDB collection using .env config.
     """
     try:
+        mongo_uri = os.getenv("MONGO_URI")
+        database_name = os.getenv("MONGO_DB")
+        collection_name = os.getenv("MONGO_COLLECTION")
+
         logging.info(f"Connecting to MongoDB at {mongo_uri}")
         client = MongoClient(mongo_uri)
         collection = client[database_name][collection_name]
@@ -111,34 +112,30 @@ def get_collection_as_dataframe(
         if "_id" in df.columns:
             df.drop(columns=["_id"], inplace=True)
 
-        logging.info(
-            f"DataFrame loaded from {database_name}.{collection_name} with shape {df.shape}"
-        )
+        logging.info(f"Loaded data from {database_name}.{collection_name}, shape: {df.shape}")
         return df
     except Exception as e:
         raise CustomException(e)
 
-def upload_dataframe_to_mongodb(
-    df: pd.DataFrame,
-    database_name: str,
-    collection_name: str,
-    mongo_uri: str = "mongodb://localhost:27017/"
-) -> None:
+
+def upload_dataframe_to_mongodb(df: pd.DataFrame) -> None:
     """
-    Upload a pandas DataFrame to a MongoDB collection.
+    Upload a pandas DataFrame to MongoDB collection using .env config.
     """
     try:
+        mongo_uri = os.getenv("MONGO_URI")
+        database_name = os.getenv("MONGO_DB")
+        collection_name = os.getenv("MONGO_COLLECTION")
+
         logging.info(f"Uploading DataFrame to MongoDB: {database_name}.{collection_name}")
         client = MongoClient(mongo_uri)
         collection = client[database_name][collection_name]
 
-        # Convert DataFrame to dict records
         data = df.to_dict(orient="records")
-
-        if len(data) > 0:
+        if data:
             collection.insert_many(data)
-            logging.info(f"Inserted {len(data)} records into {collection_name}")
+            logging.info(f"Inserted {len(data)} records.")
         else:
-            logging.warning("Empty DataFrame. No data inserted.")
+            logging.warning("Empty DataFrame. No data uploaded.")
     except Exception as e:
         raise CustomException(e)
