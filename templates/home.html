@@ -10,21 +10,31 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
+      width: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #cceae7;
-      text-align: center;
+    }
+
+    .container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
     }
 
     .bg-image {
-      display: block;
-      max-width: 100%;
-      height: auto;
-      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      /* object-fit: fill; */
+
     }
 
     .btn-container {
-      margin-top: -80px; /* Adjust based on image text */
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .btn {
@@ -43,28 +53,14 @@
     .btn:hover {
       background-color: #e69520;
     }
-
-    @media (max-width: 768px) {
-      .btn-container {
-        margin-top: -50px;
-      }
-
-      .btn {
-        padding: 12px 24px;
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <!-- Full natural size image, responsive -->
-  <img src="/static/milk_bg_clean.png" alt="Milk Quality Background" class="bg-image">
-
-  <!-- Button just under the image -->
-  <div class="btn-container">
-    <a href="/predict"><button class="btn">Get Started</button></a>
+  <div class="container">
+    <img src="../static/milk_bg_clean.jpg" alt="Milk Background" class="bg-image">
+    <div class="btn-container">
+      <a href="/predict"><button class="btn">Get Started</button></a>
+    </div>
   </div>
-
 </body>
 </html>
