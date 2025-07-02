@@ -58,11 +58,13 @@ Colour
 1. Clone the Repository
 
 git clone https://github.com/Vaidik26/Milk_Quality
+
 cd Milk_Quality_Prediction
 
 2. Create & Activate Virtual Environment
 
 python -m venv venv
+
 venv\Scripts\activate   # On Windows
 
 3. Install Requirements
