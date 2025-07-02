@@ -8,6 +8,9 @@ WORKDIR /app
 # Copy project files into the container
 COPY . .
 
+# Set PYTHONPATH so imports from src/milk_quality work
+ENV PYTHONPATH=/app/src
+
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
