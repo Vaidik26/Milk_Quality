@@ -57,7 +57,7 @@ Colour
 
 1. Clone the Repository
 
-git clone https://github.com/your-username/Milk_Quality_Prediction.git
+git clone https://github.com/Vaidik26/Milk_Quality
 cd Milk_Quality_Prediction
 
 2. Create & Activate Virtual Environment
