@@ -1,8 +1,8 @@
-## 🥛 Milk Quality Prediction
+# 🥛 Milk Quality Prediction
 
 This project is an end-to-end machine learning pipeline that predicts the quality of milk as Low, Medium, or High based on physicochemical features. It demonstrates real-world classification problem-solving — from data preprocessing to model selection and deployment.
 
-# 📌 Project Highlights
+## 📌 Project Highlights
 
 ✅ Supervised classification problem
 
@@ -17,7 +17,7 @@ This project is an end-to-end machine learning pipeline that predicts the qualit
 💾 Model saved for future prediction
 
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 Milk_Quality_Prediction/
 │
@@ -34,7 +34,7 @@ Milk_Quality_Prediction/
 └── README.md               # Project documentation
 
 
-# 📊 Features Used
+## 📊 Features Used
 
 pH
 
@@ -53,7 +53,7 @@ Colour
 (Target: Grade → encoded as Low, Medium, High)
 
 
-# 🚀 How to Run
+## 🚀 How to Run
 
 1. Clone the Repository
 
@@ -78,7 +78,7 @@ python -m src.milk_quality.pipelines.training
 python -m src.milk_quality.pipelines.prediction
 
 
-# 📈 Model Performance
+## 📈 Model Performance
 
 | Model                 | Accuracy     |
 | --------------------- | ------------ |
@@ -88,7 +88,7 @@ python -m src.milk_quality.pipelines.prediction
 | **Gradient Boosting** | **99.53%** ✅ |
 
 
-# 🛠️ Tools & Libraries
+## 🛠️ Tools & Libraries
 
 Python
 
@@ -102,9 +102,9 @@ matplotlib / seaborn
 
 joblib
 
-# 🤝 Let's Connect
+## 🤝 Let's Connect
 
 If you find this useful or have suggestions, feel free to fork the repo or connect with me on [Linkedin](https://www.linkedin.com/in/vaidik-yadav-260a60248/)
 
-# 📄 License
+## 📄 License
 This project is open source under the MIT License.
