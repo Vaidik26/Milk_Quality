@@ -9,4 +9,6 @@ pymongo
 dotenv
 werkzeug
 flask
+fastapi
+uvicorn
 #-e .
