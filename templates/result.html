@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body {
+      background-color: #fef9e7;
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    table {
+      width: 90%;
+      margin: auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #bbb;
+      padding: 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #f7dc6f;
+    }
+    .btn {
+      display: block;
+      margin: 20px auto;
+      background-color: #f5b041;
+      color: white;
+      padding: 10px 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn:hover {
+      background-color: #eb984e;
+    }
+  </style>
+</head>
+<body>
+  <h2>Prediction Results</h2>
+  {{ table | safe }}
+  <a href="{{ url_for('download') }}" class="btn">Download CSV</a>
+</body>
+</html>

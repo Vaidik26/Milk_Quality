@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Milk Data</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('/static/milk_bg.png') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background-color: #58d68d;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #45b977;
+    }
+  </style>
+</head>
+<body>
+  <form method="POST" enctype="multipart/form-data">
+    <h2>Upload Milk Data CSV</h2>
+    <input type="file" name="file" required><br>
+    <button type="submit" class="btn">Next</button>
+  </form>
+</body>
+</html>

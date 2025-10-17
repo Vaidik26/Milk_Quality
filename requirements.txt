@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+dill
+jupyter
+pymongo
+dotenv
+werkzeug
+flask
+#-e .
